@@ -5,6 +5,7 @@
 
     <groupId>io.hexlet.exercise</groupId>
     <artifactId>Hexlet_JavaForWEBServices</artifactId>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
