@@ -1,7 +1,9 @@
 package io.hexlet.exercise.res;
 
-import io.hexlet.exercise.Main;
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.grizzly.threadpool.GrizzlyExecutorService;
+import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+import org.glassfish.jersey.server.ResourceConfig;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,25 +14,29 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+import java.net.URI;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 public class LinkResourcesTest {
 
-    private HttpServer server;
-    private WebTarget target;
+    private WebTarget target = ClientBuilder
+            .newClient()
+            .target("http://localhost:8080/Hexlet_JavaForWEBServices-1.0-SNAPSHOT/api/");
 
-    @Before
+/*    @Before
     public void setUp() throws Exception {
-        server = Main.startServer();
+        server = GrizzlyExecutorService.createHttpServer(
+                URI.create(BASE_URI), new ResourceConfig().packages("io.hexlet.exercise.res"));
         final Client c = ClientBuilder.newClient();
-        target = c.target(Main.BASE_URI);
+        target = c.target(BASE_URI);
     }
 
     @After
     public void tearDown() throws Exception {
         server.shutdownNow();
-    }
+    }*/
 
     @Test
     public void testUrlCreation() {
