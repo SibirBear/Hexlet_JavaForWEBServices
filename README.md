@@ -5,8 +5,8 @@ Usage:
 1. To start tests use:
 
     `make test`
-2. To build the server:
+2. To build a WAR package:
 
-    `make start`
+    `make package`
 
-Also, you can create **WAR**-file to deploy on Tomee server.
+Deploy the **WAR**-file on Tomcat 9.
