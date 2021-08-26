@@ -2,7 +2,6 @@ test:
 	mvn clean
 	mvn compile
 	mvn test
-start:
+package:
 	mvn clean
-	mvn compile
-	mvn exec:java
+	mvn package
